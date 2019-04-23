@@ -1,15 +1,17 @@
-# AWS OpsWorks - Python Boto3 to integrate with aws cloudformation documentation.
-# Also, there are implementations to automate the OpenAM (SSO Application, Authentication, Authotization) and OpenDJ (Repository LDAP to the OpenAM), 
-# deployments process.
-# This scenario focus in the integration with aws opsworks via python script using boto3 library.
-# Steps as:
+AWS OpsWorks - Python Boto3 to integrate with aws cloudformation documentation.
+Also, there are implementations to automate the OpenAM (SSO Application, Authentication, Authotization) and OpenDJ (Repository LDAP to the OpenAM), 
+deployments process.
+
+This scenario focus in the integration with aws opsworks via python script using boto3 library.
+
+Steps as:
   1) Create App in AWS Opsworks (all parameters).
   2) Zipping and Uploading files in AWS S3 (basically yaml files).
   3) Create tree in OpenDJ (require to the OpenAM authentication and authorization).
   4) Create Realm and Policies in OpenAM (OpenAM segmentation domain).
 
 
-# Output the stack.py script.:
+Output the stack.py script.:
 .:HELP:. :Python Script:
                    Automate the following steps:
                    - AWS Opsworks,
