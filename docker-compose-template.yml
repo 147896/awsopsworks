@@ -1,0 +1,29 @@
+version: '2'
+services:
+    APPNAME-node1:
+        image: ENVNAME-docker-master.aws.unimedbh.com.br:5000/jboss-ga:7.1.1-OAM13
+        container_name: APPNAME-service
+        hostname: APPNAME-node1
+        environment:
+            - SERVICE_8443_NAME=APPNAME-service
+            - SERVICE_8009_NAME=APPNAME-node1
+            - SERVICE_8080_IGNORE=true
+            - SERVICE_TAGS=web=APPNAME;APPNAME;ajp;8009;JSESSIONID|jsessionid;4;60;500-502-503
+            - LB_HOSTNAME_PREFIX=extranetENVNAME2
+            - OPENAM_AGENT_PASSWORD=AGENTPASS
+            - DNS_SERVER=${HOST_IP}
+        dns_search:
+           - node.aws.unimedbh.com.br
+           - service.aws.unimedbh.com.br
+        networks:
+           - application
+        volumes:
+            - /opt/docker/volumes/APPNAME/deploy/APPNAME.ear:/opt/jboss/standalone/deployments/APPNAME.ear
+            - /opt/docker/volumes/APPNAME/deploy/APPNAME-ds.xml:/opt/jboss/standalone/deployments/APPNAME-ds.xml
+            - /opt/docker/volumes/APPNAME/node1/logs-jboss:/opt/jboss/standalone/log
+        stdin_open: true
+        tty: true
+networks:
+    application:
+        external:
+            name: application
