@@ -1,4 +1,6 @@
-AWS OpsWorks - Python Boto3 to integrate with aws cloudformation documentation.
+AWS OpsWorks - Python Boto3 to integrate with aws cloudformation. 
+Following AWS CloudFormation Documentation.: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html
+
 Also, there are implementations to automate the OpenAM (SSO Application, Authentication, Authotization) and OpenDJ (Repository LDAP to the OpenAM), 
 deployments process.
 
